@@ -1,0 +1,155 @@
+[4] Design a web page for I2IT College website with logo, official website link, and course-
+subject table(USE CSS)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>I2IT College Website</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            margin: 0;
+        }
+
+        /* Header */
+
+        .header
+        {
+            background-color: darkblue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header img
+        {
+            width: 120px;
+            height: 120px;
+        }
+
+        /* Content */
+
+        .container
+        {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        /* Website Link */
+
+        a
+        {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Table */
+
+        table
+        {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th
+        {
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+        }
+
+        td
+        {
+            text-align: center;
+            padding: 10px;
+        }
+
+        table, th, td
+        {
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <!-- Logo -->
+
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/58/International_Institute_of_Information_Technology%2C_Pune_logo.png" alt="I2IT Logo">
+
+        <h1>International Institute of Information Technology (I2IT)</h1>
+
+        <p>Pune, Maharashtra</p>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="container">
+
+        <!-- Official Website Link -->
+
+        <h2><u>Official Website</u></h2>
+
+        <p>
+            Visit :
+            <a href="https://www.isquareit.edu.in" target="_blank">
+                www.isquareit.edu.in
+            </a>
+        </p>
+
+        <!-- Course Table -->
+
+        <h2><u>Course & Subjects Table</u></h2>
+
+        <table>
+
+            <tr>
+                <th>Course</th>
+                <th>Subject 1</th>
+                <th>Subject 2</th>
+                <th>Subject 3</th>
+            </tr>
+
+            <tr>
+                <td>BCA</td>
+                <td>Web Development</td>
+                <td>Python</td>
+                <td>Database</td>
+            </tr>
+
+            <tr>
+                <td>B.Tech</td>
+                <td>Java</td>
+                <td>Networking</td>
+                <td>Operating System</td>
+            </tr>
+
+            <tr>
+                <td>MCA</td>
+                <td>Cloud Computing</td>
+                <td>AI</td>
+                <td>Data Science</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+</html>
