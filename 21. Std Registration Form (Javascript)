@@ -1,0 +1,194 @@
+[21] Create Student Registration Form with Validation using JavaScript. Also Style the form
+using CSS.
+Show a success message after successful validation.
+● Name
+● Email
+● Password
+
+● Confirm Password
+● Phone Number
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        h3
+        {
+            color: green;
+            text-align: center;
+        }
+
+    </style>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function validateForm()
+        {
+            // Get Values
+
+            var name = document.getElementById("name").value;
+
+            var email = document.getElementById("email").value;
+
+            var password = document.getElementById("password").value;
+
+            var confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+            var phone = document.getElementById("phone").value;
+
+            // Empty Field Validation
+
+            if(name == "" || email == "" || password == ""
+            || confirmPassword == "" || phone == "")
+            {
+                alert("All fields are required");
+
+                return false;
+            }
+
+            // Email Validation
+
+            if(email.indexOf("@") == -1 || email.indexOf(".") == -1)
+            {
+                alert("Enter valid email");
+
+                return false;
+            }
+
+            // Password Match Validation
+
+            if(password != confirmPassword)
+            {
+                alert("Passwords do not match");
+
+                return false;
+            }
+
+            // Phone Validation
+
+            if(phone.length != 10 || isNaN(phone))
+            {
+                alert("Enter valid 10 digit phone number");
+
+                return false;
+            }
+
+            // Success Message
+
+            document.getElementById("message").innerHTML =
+            "Registration Successful!";
+
+            return false;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Student Registration Form</u></h1>
+
+        <!-- Form -->
+
+        <form onsubmit="return validateForm()">
+
+            <p>
+                <b>Name:</b><br>
+
+                <input type="text" id="name"
+                placeholder="Enter your name">
+            </p>
+
+            <p>
+                <b>Email:</b><br>
+
+                <input type="text" id="email"
+                placeholder="Enter your email">
+            </p>
+
+            <p>
+                <b>Password:</b><br>
+
+                <input type="password" id="password"
+                placeholder="Enter password">
+            </p>
+
+            <p>
+                <b>Confirm Password:</b><br>
+
+                <input type="password" id="confirmPassword"
+                placeholder="Confirm password">
+            </p>
+
+            <p>
+                <b>Phone Number:</b><br>
+
+                <input type="text" id="phone"
+                placeholder="Enter phone number">
+            </p>
+
+            <!-- Buttons -->
+
+            <p>
+
+                <input type="submit" value="Register" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+
+            </p>
+
+        </form>
+
+        <!-- Success Message -->
+
+        <h3 id="message"></h3>
+
+    </div>
+
+</body>
+</html>
