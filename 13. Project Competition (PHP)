@@ -1,0 +1,137 @@
+[13] Write a PHP program to create a Project Competition Registration Form that accepts
+user input and displays the submitted details using the POST method.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Competition Registration</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input, textarea
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        h2
+        {
+            color: darkred;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Project Competition Registration</u></h1>
+
+        <!-- Form -->
+
+        <form method="POST">
+
+            <p>
+                <b>Student Name:</b><br>
+
+                <input type="text" name="name" placeholder="Enter your name">
+            </p>
+
+            <p>
+                <b>Email:</b><br>
+
+                <input type="email" name="email" placeholder="Enter your email">
+            </p>
+
+            <p>
+                <b>Project Title:</b><br>
+
+                <input type="text" name="project" placeholder="Enter project title">
+            </p>
+
+            <p>
+                <b>Project Description:</b><br>
+
+                <textarea name="description" rows="4"
+                placeholder="Enter project description"></textarea>
+            </p>
+
+            <!-- Buttons -->
+
+            <p>
+
+                <input type="submit" value="Register" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+
+            </p>
+
+        </form>
+
+        <!-- PHP POST Method -->
+
+        <?php
+
+            if($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                // Get Form Data
+
+                $name = $_POST['name'];
+
+                $email = $_POST['email'];
+
+                $project = $_POST['project'];
+
+                $description = $_POST['description'];
+
+                // Display Data
+
+                echo "<h2>Submitted Details</h2>";
+
+                echo "<b>Name:</b> " . $name . "<br><br>";
+
+                echo "<b>Email:</b> " . $email . "<br><br>";
+
+                echo "<b>Project Title:</b> " . $project . "<br><br>";
+
+                echo "<b>Description:</b> " . $description;
+            }
+
+        ?>
+
+    </div>
+
+</body>
+</html>
