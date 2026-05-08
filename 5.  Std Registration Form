@@ -1,0 +1,107 @@
+[5] Create a Student registration form with fields: name, email, gender, date of birth, and
+submit button.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Student Registration Form</u></h1>
+
+        <form>
+
+            <!-- Name -->
+
+            <p>
+                <b>Name:</b><br>
+
+                <input type="text" name="name" placeholder="Enter your name">
+            </p>
+
+            <!-- Email -->
+
+            <p>
+                <b>Email:</b><br>
+
+                <input type="email" name="email" placeholder="Enter your email">
+            </p>
+
+            <!-- Gender -->
+
+            <p>
+                <b>Gender:</b><br>
+
+                <input type="radio" name="gender" value="Male"> Male<br>
+
+                <input type="radio" name="gender" value="Female"> Female<br>
+
+                <input type="radio" name="gender" value="Other"> Other
+            </p>
+
+            <!-- Date of Birth -->
+
+            <p>
+                <b>Date of Birth:</b><br>
+
+                <input type="date" name="dob">
+            </p>
+
+            <!-- Submit Button -->
+
+            <p>
+                <input type="submit" value="Register" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+            </p>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
