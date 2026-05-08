@@ -1,0 +1,167 @@
+[9] Write a JavaScript program to create college Library Signup form validation for email,
+mobile no and empty fields and other
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Signup Form</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+    </style>
+
+    <!-- JavaScript Validation -->
+
+    <script>
+
+        function validateForm()
+        {
+            // Get Values
+
+            var name = document.getElementById("name").value;
+
+            var email = document.getElementById("email").value;
+
+            var mobile = document.getElementById("mobile").value;
+
+            var password = document.getElementById("password").value;
+
+            // Empty Field Validation
+
+            if(name == "" || email == "" || mobile == "" || password == "")
+            {
+                alert("All fields are required");
+
+                return false;
+            }
+
+            // Email Validation
+
+            if(email.indexOf("@") == -1 || email.indexOf(".") == -1)
+            {
+                alert("Enter valid email");
+
+                return false;
+            }
+
+            // Mobile Validation
+
+            if(mobile.length != 10 || isNaN(mobile))
+            {
+                alert("Enter valid 10 digit mobile number");
+
+                return false;
+            }
+
+            // Password Validation
+
+            if(password.length < 6)
+            {
+                alert("Password must be minimum 6 characters");
+
+                return false;
+            }
+
+            // Success Message
+
+            alert("Form Submitted Successfully");
+
+            return true;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Library Signup Form</u></h1>
+
+        <form onsubmit="return validateForm()">
+
+            <!-- Name -->
+
+            <p>
+                <b>Name:</b><br>
+
+                <input type="text" id="name" placeholder="Enter your name">
+            </p>
+
+            <!-- Email -->
+
+            <p>
+                <b>Email:</b><br>
+
+                <input type="text" id="email" placeholder="Enter your email">
+            </p>
+
+            <!-- Mobile -->
+
+            <p>
+                <b>Mobile Number:</b><br>
+
+                <input type="text" id="mobile" placeholder="Enter mobile number">
+            </p>
+
+            <!-- Password -->
+
+            <p>
+                <b>Password:</b><br>
+
+                <input type="password" id="password" placeholder="Enter password">
+            </p>
+
+            <!-- Buttons -->
+
+            <p>
+
+                <input type="submit" value="Signup" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+
+            </p>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
