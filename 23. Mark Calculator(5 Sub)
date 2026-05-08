@@ -1,0 +1,199 @@
+[23] Create a Student Marks Calculator Web Page that allows the user to enter a student’s
+name and marks for five subjects. The program should calculate the total marks,
+percentage, and grade, and display the result. Assign grade based on percentage:
+A → 75% and above
+B → 60% – 74%
+C → 50% – 59%
+Use CSS to:
+Add a gradient background to the page.
+Create a centered container with rounded corners and shadow.
+Style the button with hover effects.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Calculator</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+
+        .container
+        {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0px 0px 15px gray;
+            text-align: center;
+        }
+
+        h1
+        {
+            color: darkblue;
+        }
+
+        input
+        {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hover Effect */
+
+        button:hover
+        {
+            background-color: darkred;
+        }
+
+        h2
+        {
+            color: green;
+        }
+
+    </style>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function calculateResult()
+        {
+            // Get Values
+
+            var name =
+            document.getElementById("name").value;
+
+            var m1 =
+            parseFloat(document.getElementById("m1").value);
+
+            var m2 =
+            parseFloat(document.getElementById("m2").value);
+
+            var m3 =
+            parseFloat(document.getElementById("m3").value);
+
+            var m4 =
+            parseFloat(document.getElementById("m4").value);
+
+            var m5 =
+            parseFloat(document.getElementById("m5").value);
+
+            // Calculate Total
+
+            var total = m1 + m2 + m3 + m4 + m5;
+
+            // Calculate Percentage
+
+            var percentage = total / 5;
+
+            // Grade Calculation
+
+            var grade;
+
+            if(percentage >= 75)
+            {
+                grade = "A";
+            }
+
+            else if(percentage >= 60)
+            {
+                grade = "B";
+            }
+
+            else if(percentage >= 50)
+            {
+                grade = "C";
+            }
+
+            else
+            {
+                grade = "Fail";
+            }
+
+            // Display Result
+
+            document.getElementById("result").innerHTML =
+            "<h2>Student Result</h2>" +
+            "<b>Name:</b> " + name + "<br><br>" +
+            "<b>Total Marks:</b> " + total + "<br><br>" +
+            "<b>Percentage:</b> " + percentage + "%" + "<br><br>" +
+            "<b>Grade:</b> " + grade;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Student Marks Calculator</u></h1>
+
+        <!-- Form -->
+
+        <p>
+            <input type="text" id="name"
+            placeholder="Enter student name">
+        </p>
+
+        <p>
+            <input type="number" id="m1"
+            placeholder="Enter Subject 1 Marks">
+        </p>
+
+        <p>
+            <input type="number" id="m2"
+            placeholder="Enter Subject 2 Marks">
+        </p>
+
+        <p>
+            <input type="number" id="m3"
+            placeholder="Enter Subject 3 Marks">
+        </p>
+
+        <p>
+            <input type="number" id="m4"
+            placeholder="Enter Subject 4 Marks">
+        </p>
+
+        <p>
+            <input type="number" id="m5"
+            placeholder="Enter Subject 5 Marks">
+        </p>
+
+        <!-- Button -->
+
+        <button onclick="calculateResult()">
+
+            Calculate Result
+
+        </button>
+
+        <!-- Result -->
+
+        <div id="result"></div>
+
+    </div>
+
+</body>
+</html>
