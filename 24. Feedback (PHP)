@@ -1,0 +1,145 @@
+[24] Design a PHP feedback form that collects user feedback and displays it.display current
+date, time
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input, textarea
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        h2
+        {
+            color: darkred;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Feedback Form</u></h1>
+
+        <!-- Form -->
+
+        <form method="POST">
+
+            <p>
+                <b>Name:</b><br>
+
+                <input type="text" name="name"
+                placeholder="Enter your name">
+            </p>
+
+            <p>
+                <b>Email:</b><br>
+
+                <input type="email" name="email"
+                placeholder="Enter your email">
+            </p>
+
+            <p>
+                <b>Feedback:</b><br>
+
+                <textarea name="feedback" rows="4"
+                placeholder="Enter your feedback"></textarea>
+            </p>
+
+            <!-- Buttons -->
+
+            <p>
+
+                <input type="submit" value="Submit Feedback"
+                class="btn">
+
+                <input type="reset" value="Reset"
+                class="btn">
+
+            </p>
+
+        </form>
+
+        <!-- PHP Code -->
+
+        <?php
+
+            if($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                // Set Time Zone
+
+                date_default_timezone_set("Asia/Kolkata");
+
+                // Get Form Data
+
+                $name = $_POST['name'];
+
+                $email = $_POST['email'];
+
+                $feedback = $_POST['feedback'];
+
+                // Display Feedback
+
+                echo "<h2>Feedback Submitted Successfully</h2>";
+
+                echo "<b>Name:</b> " . $name . "<br><br>";
+
+                echo "<b>Email:</b> " . $email . "<br><br>";
+
+                echo "<b>Feedback:</b> " . $feedback . "<br><br>";
+
+                // Current Date
+
+                echo "<b>Current Date:</b> "
+                . date("d-m-Y") . "<br><br>";
+
+                // Current Time
+
+                echo "<b>Current Time:</b> "
+                . date("h:i:s A");
+            }
+
+        ?>
+
+    </div>
+
+</body>
+</html>
