@@ -1,0 +1,170 @@
+[16] Write a JavaScript program for a simple calculator which will Calculate the area of a
+rectangle, triangle, or circle using functions and switch-case.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area Calculator</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1
+        {
+            color: darkblue;
+        }
+
+        input, select
+        {
+            width: 90%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        button
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+
+        h3
+        {
+            color: darkred;
+        }
+
+    </style>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function calculateArea()
+        {
+            // Get Values
+
+            var value1 = parseFloat(document.getElementById("value1").value);
+
+            var value2 = parseFloat(document.getElementById("value2").value);
+
+            var shape = document.getElementById("shape").value;
+
+            var area;
+
+            // Switch Case
+
+            switch(shape)
+            {
+                case "rectangle":
+
+                    area = value1 * value2;
+
+                    break;
+
+                case "triangle":
+
+                    area = 0.5 * value1 * value2;
+
+                    break;
+
+                case "circle":
+
+                    area = 3.14 * value1 * value1;
+
+                    break;
+
+                default:
+
+                    area = "Invalid Shape";
+            }
+
+            // Display Result
+
+            document.getElementById("result").innerHTML =
+            "Area = " + area;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Area Calculator</u></h1>
+
+        <!-- First Value -->
+
+        <p>
+
+            <input type="text" id="value1"
+            placeholder="Enter value 1">
+
+        </p>
+
+        <!-- Second Value -->
+
+        <p>
+
+            <input type="text" id="value2"
+            placeholder="Enter value 2">
+
+        </p>
+
+        <!-- Shape Selection -->
+
+        <p>
+
+            <select id="shape">
+
+                <option value="rectangle">
+                    Rectangle
+                </option>
+
+                <option value="triangle">
+                    Triangle
+                </option>
+
+                <option value="circle">
+                    Circle
+                </option>
+
+            </select>
+
+        </p>
+
+        <!-- Button -->
+
+        <button onclick="calculateArea()">
+
+            Calculate Area
+
+        </button>
+
+        <!-- Result -->
+
+        <h3 id="result"></h3>
+
+    </div>
+
+</body>
+</html>
