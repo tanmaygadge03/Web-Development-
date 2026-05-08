@@ -1,0 +1,159 @@
+[17] Develop a PHP application that accepts a student’s name and marks through a form
+using POST method. The program should process the name using string functions and
+calculate total and average marks using arrays.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Application</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        h2
+        {
+            color: darkred;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Student Marks Application</u></h1>
+
+        <!-- Form -->
+
+        <form method="POST">
+
+            <p>
+                <b>Student Name:</b><br>
+
+                <input type="text" name="name"
+                placeholder="Enter student name">
+            </p>
+
+            <p>
+                <b>Marks 1:</b><br>
+
+                <input type="number" name="m1"
+                placeholder="Enter marks">
+            </p>
+
+            <p>
+                <b>Marks 2:</b><br>
+
+                <input type="number" name="m2"
+                placeholder="Enter marks">
+            </p>
+
+            <p>
+                <b>Marks 3:</b><br>
+
+                <input type="number" name="m3"
+                placeholder="Enter marks">
+            </p>
+
+            <!-- Buttons -->
+
+            <p>
+
+                <input type="submit" value="Calculate" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+
+            </p>
+
+        </form>
+
+        <!-- PHP Code -->
+
+        <?php
+
+            if($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                // Get Name
+
+                $name = $_POST['name'];
+
+                // String Functions
+
+                $uppercase = strtoupper($name);
+
+                $length = strlen($name);
+
+                // Store Marks in Array
+
+                $marks = array(
+                    $_POST['m1'],
+                    $_POST['m2'],
+                    $_POST['m3']
+                );
+
+                // Total Marks
+
+                $total = array_sum($marks);
+
+                // Average Marks
+
+                $average = $total / count($marks);
+
+                // Display Result
+
+                echo "<h2>Student Details</h2>";
+
+                echo "<b>Original Name:</b> " . $name . "<br><br>";
+
+                echo "<b>Uppercase Name:</b> " . $uppercase . "<br><br>";
+
+                echo "<b>Name Length:</b> " . $length . "<br><br>";
+
+                echo "<b>Total Marks:</b> " . $total . "<br><br>";
+
+                echo "<b>Average Marks:</b> " . $average;
+            }
+
+        ?>
+
+    </div>
+
+</body>
+</html>
