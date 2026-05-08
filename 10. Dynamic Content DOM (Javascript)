@@ -1,0 +1,78 @@
+[10] Create a web page that uses JavaScript to display dynamic content using DOM.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Content using DOM</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container
+        {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button
+        {
+            padding: 10px 20px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            margin-top: 20px;
+        }
+
+        h2
+        {
+            color: darkred;
+        }
+
+    </style>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function showContent()
+        {
+            // Access Element using DOM
+
+            document.getElementById("demo").innerHTML =
+            "Welcome to JavaScript DOM Programming!";
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Dynamic Content using DOM</u></h1>
+
+        <p id="demo">
+            Click button to display content
+        </p>
+
+        <!-- Button -->
+
+        <button onclick="showContent()">
+            Click Here
+        </button>
+
+    </div>
+
+</body>
+</html>
