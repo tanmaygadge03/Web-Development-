@@ -1,0 +1,160 @@
+[11] Write a JavaScript program for a simple calculator using functions and switch-case.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h1
+        {
+            color: darkblue;
+        }
+
+        input, select
+        {
+            width: 90%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        button
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+        }
+
+        h3
+        {
+            color: darkred;
+        }
+
+    </style>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function calculate()
+        {
+            // Get Values
+
+            var num1 = parseFloat(document.getElementById("num1").value);
+
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            var operator = document.getElementById("operator").value;
+
+            var result;
+
+            // Switch Case
+
+            switch(operator)
+            {
+                case "+":
+                    result = num1 + num2;
+                    break;
+
+                case "-":
+                    result = num1 - num2;
+                    break;
+
+                case "*":
+                    result = num1 * num2;
+                    break;
+
+                case "/":
+                    result = num1 / num2;
+                    break;
+
+                default:
+                    result = "Invalid Operator";
+            }
+
+            // Display Result
+
+            document.getElementById("result").innerHTML =
+            "Result = " + result;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Simple Calculator</u></h1>
+
+        <!-- Number 1 -->
+
+        <p>
+
+            <input type="text" id="num1" placeholder="Enter first number">
+
+        </p>
+
+        <!-- Number 2 -->
+
+        <p>
+
+            <input type="text" id="num2" placeholder="Enter second number">
+
+        </p>
+
+        <!-- Operator -->
+
+        <p>
+
+            <select id="operator">
+
+                <option value="+">Addition (+)</option>
+
+                <option value="-">Subtraction (-)</option>
+
+                <option value="*">Multiplication (*)</option>
+
+                <option value="/">Division (/)</option>
+
+            </select>
+
+        </p>
+
+        <!-- Button -->
+
+        <button onclick="calculate()">
+
+            Calculate
+
+        </button>
+
+        <!-- Result -->
+
+        <h3 id="result"></h3>
+
+    </div>
+
+</body>
+</html>
