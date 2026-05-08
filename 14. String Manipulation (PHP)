@@ -1,0 +1,124 @@
+[14] Implement a PHP program for string manipulation ( reverse, length, substring).
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Manipulation Program</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        h2
+        {
+            color: darkred;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>String Manipulation Program</u></h1>
+
+        <!-- Form -->
+
+        <form method="POST">
+
+            <p>
+                <b>Enter String:</b><br>
+
+                <input type="text" name="str"
+                placeholder="Enter any string">
+            </p>
+
+            <!-- Buttons -->
+
+            <p>
+
+                <input type="submit" value="Process String" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+
+            </p>
+
+        </form>
+
+        <!-- PHP Code -->
+
+        <?php
+
+            if($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                // Get String
+
+                $str = $_POST['str'];
+
+                // String Reverse
+
+                $reverse = strrev($str);
+
+                // String Length
+
+                $length = strlen($str);
+
+                // Substring
+
+                $substring = substr($str, 0, 5);
+
+                // Display Result
+
+                echo "<h2>Result</h2>";
+
+                echo "<b>Original String:</b> " . $str . "<br><br>";
+
+                echo "<b>Reversed String:</b> " . $reverse . "<br><br>";
+
+                echo "<b>String Length:</b> " . $length . "<br><br>";
+
+                echo "<b>Substring:</b> " . $substring;
+            }
+
+        ?>
+
+    </div>
+
+</body>
+</html>
