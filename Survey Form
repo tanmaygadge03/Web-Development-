@@ -1,0 +1,110 @@
+[2] Creating a survey form that allows users to easily submit their responses. The form will
+include different input types such as text fields, checkboxes, and radio buttons, all
+designed using HTML for the structure and CSS for styling.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+
+    <style>
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1
+        {
+            text-align: center;
+        }
+
+        input, textarea
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            width: 45%;
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Survey Form</u></h1>
+
+        <form>
+
+            <!-- Name -->
+            <p>
+                <b>Name:</b><br>
+                <input type="text" name="name" placeholder="Enter your name">
+            </p>
+
+            <!-- Email -->
+            <p>
+                <b>Email:</b><br>
+                <input type="email" name="email" placeholder="Enter your email">
+            </p>
+
+            <!-- Gender -->
+            <p>
+                <b>Gender:</b><br>
+
+                <input type="radio" name="gender" value="Male"> Male<br>
+
+                <input type="radio" name="gender" value="Female"> Female<br>
+
+                <input type="radio" name="gender" value="Other"> Other
+            </p>
+
+            <!-- Hobbies -->
+            <p>
+                <b>Interests:</b><br>
+
+                <input type="checkbox" name="interest" value="Sports"> Sports<br>
+
+                <input type="checkbox" name="interest" value="Music"> Music<br>
+
+                <input type="checkbox" name="interest" value="Reading"> Reading
+            </p>
+
+            <!-- Feedback -->
+            <p>
+                <b>Feedback:</b><br>
+
+                <textarea rows="4" placeholder="Enter your feedback"></textarea>
+            </p>
+
+            <!-- Buttons -->
+            <p>
+                <input type="submit" value="Submit" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+            </p>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
