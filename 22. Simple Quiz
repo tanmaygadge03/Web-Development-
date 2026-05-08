@@ -1,0 +1,274 @@
+[22] Design and develop a Simple Quiz Web Application that asks the user ten multiple-
+choice questions. The user should be able to select one option for each question and
+submit the quiz to see their score.
+Requirements:
+1. Create a web page titled “Simple Quiz”.
+2. Display ten multiple-choice questions using radio buttons
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Quiz</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .question
+        {
+            margin-top: 20px;
+        }
+
+        button
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        h2
+        {
+            color: darkred;
+            text-align: center;
+        }
+
+    </style>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function calculateScore()
+        {
+            var score = 0;
+
+            // Check Answers
+
+            if(document.querySelector('input[name="q1"]:checked')?.value == "HTML")
+            score++;
+
+            if(document.querySelector('input[name="q2"]:checked')?.value == "CSS")
+            score++;
+
+            if(document.querySelector('input[name="q3"]:checked')?.value == "JavaScript")
+            score++;
+
+            if(document.querySelector('input[name="q4"]:checked')?.value == "PHP")
+            score++;
+
+            if(document.querySelector('input[name="q5"]:checked')?.value == "Python")
+            score++;
+
+            if(document.querySelector('input[name="q6"]:checked')?.value == "Internet")
+            score++;
+
+            if(document.querySelector('input[name="q7"]:checked')?.value == "CPU")
+            score++;
+
+            if(document.querySelector('input[name="q8"]:checked')?.value == "RAM")
+            score++;
+
+            if(document.querySelector('input[name="q9"]:checked')?.value == "Monitor")
+            score++;
+
+            if(document.querySelector('input[name="q10"]:checked')?.value == "Keyboard")
+            score++;
+
+            // Display Score
+
+            document.getElementById("result").innerHTML =
+            "Your Score = " + score + " / 10";
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Simple Quiz</u></h1>
+
+        <form>
+
+            <!-- Question 1 -->
+
+            <div class="question">
+
+                <p><b>1. Which language is used for web page structure?</b></p>
+
+                <input type="radio" name="q1" value="HTML"> HTML<br>
+
+                <input type="radio" name="q1" value="Java"> Java<br>
+
+                <input type="radio" name="q1" value="Python"> Python
+
+            </div>
+
+            <!-- Question 2 -->
+
+            <div class="question">
+
+                <p><b>2. Which language is used for styling?</b></p>
+
+                <input type="radio" name="q2" value="CSS"> CSS<br>
+
+                <input type="radio" name="q2" value="C"> C<br>
+
+                <input type="radio" name="q2" value="C++"> C++
+
+            </div>
+
+            <!-- Question 3 -->
+
+            <div class="question">
+
+                <p><b>3. Which language is used for scripting?</b></p>
+
+                <input type="radio" name="q3" value="JavaScript"> JavaScript<br>
+
+                <input type="radio" name="q3" value="PHP"> PHP<br>
+
+                <input type="radio" name="q3" value="Java"> Java
+
+            </div>
+
+            <!-- Question 4 -->
+
+            <div class="question">
+
+                <p><b>4. Which language is server-side?</b></p>
+
+                <input type="radio" name="q4" value="PHP"> PHP<br>
+
+                <input type="radio" name="q4" value="HTML"> HTML<br>
+
+                <input type="radio" name="q4" value="CSS"> CSS
+
+            </div>
+
+            <!-- Question 5 -->
+
+            <div class="question">
+
+                <p><b>5. Which is a programming language?</b></p>
+
+                <input type="radio" name="q5" value="Python"> Python<br>
+
+                <input type="radio" name="q5" value="HTTP"> HTTP<br>
+
+                <input type="radio" name="q5" value="URL"> URL
+
+            </div>
+
+            <!-- Question 6 -->
+
+            <div class="question">
+
+                <p><b>6. WWW stands for?</b></p>
+
+                <input type="radio" name="q6" value="Internet"> World Wide Web<br>
+
+                <input type="radio" name="q6" value="Browser"> Browser<br>
+
+                <input type="radio" name="q6" value="Server"> Server
+
+            </div>
+
+            <!-- Question 7 -->
+
+            <div class="question">
+
+                <p><b>7. Brain of computer?</b></p>
+
+                <input type="radio" name="q7" value="CPU"> CPU<br>
+
+                <input type="radio" name="q7" value="Mouse"> Mouse<br>
+
+                <input type="radio" name="q7" value="Printer"> Printer
+
+            </div>
+
+            <!-- Question 8 -->
+
+            <div class="question">
+
+                <p><b>8. Temporary memory is called?</b></p>
+
+                <input type="radio" name="q8" value="RAM"> RAM<br>
+
+                <input type="radio" name="q8" value="ROM"> ROM<br>
+
+                <input type="radio" name="q8" value="Hard Disk"> Hard Disk
+
+            </div>
+
+            <!-- Question 9 -->
+
+            <div class="question">
+
+                <p><b>9. Output device?</b></p>
+
+                <input type="radio" name="q9" value="Monitor"> Monitor<br>
+
+                <input type="radio" name="q9" value="Keyboard"> Keyboard<br>
+
+                <input type="radio" name="q9" value="Mouse"> Mouse
+
+            </div>
+
+            <!-- Question 10 -->
+
+            <div class="question">
+
+                <p><b>10. Input device?</b></p>
+
+                <input type="radio" name="q10" value="Keyboard"> Keyboard<br>
+
+                <input type="radio" name="q10" value="Speaker"> Speaker<br>
+
+                <input type="radio" name="q10" value="Monitor"> Monitor
+
+            </div>
+
+            <!-- Button -->
+
+            <button type="button" onclick="calculateScore()">
+
+                Submit Quiz
+
+            </button>
+
+        </form>
+
+        <!-- Result -->
+
+        <h2 id="result"></h2>
+
+    </div>
+
+</body>
+</html>
