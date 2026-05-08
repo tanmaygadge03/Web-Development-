@@ -1,0 +1,73 @@
+[12] Design a PHP script to display Dashboard greeting page with Welcome message and
+current date & time.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Greeting Page</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        h1
+        {
+            color: darkblue;
+        }
+
+        h2
+        {
+            color: darkred;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Dashboard Page</u></h1>
+
+        <!-- PHP Code -->
+
+        <?php
+
+            // Set Time Zone
+
+            date_default_timezone_set("Asia/Kolkata");
+
+            // Welcome Message
+
+            echo "<h2>Welcome to Student Dashboard</h2>";
+
+            // Current Date
+
+            echo "<h3>Current Date : " . date("d-m-Y") . "</h3>";
+
+            // Current Time
+
+            echo "<h3>Current Time : " . date("h:i:s A") . "</h3>";
+
+        ?>
+
+    </div>
+
+</body>
+</html>
