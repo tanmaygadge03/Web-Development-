@@ -1,0 +1,136 @@
+[19] Write a PHP program to perform below string operations
+a) transform a string all uppercase letters.
+b) transform a string all lowercase letters.
+c) make a string's first character uppercase.
+d) make a string's first character of all the words uppercase.
+e) remove all leading zeroes from a string.(e.g.000056.8->56.8)
+f) reverse string,length ,substring
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Operations Program</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        h2
+        {
+            color: darkred;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>PHP String Operations</u></h1>
+
+        <!-- Form -->
+
+        <form method="POST">
+
+            <p>
+                <b>Enter String:</b><br>
+
+                <input type="text" name="str"
+                placeholder="Enter any string">
+            </p>
+
+            <p>
+
+                <input type="submit" value="Process" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+
+            </p>
+
+        </form>
+
+        <!-- PHP Code -->
+
+        <?php
+
+            if($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                $str = $_POST['str'];
+
+                echo "<h2>Results</h2>";
+
+                // a) Uppercase
+
+                echo "<b>Uppercase:</b> " . strtoupper($str) . "<br><br>";
+
+                // b) Lowercase
+
+                echo "<b>Lowercase:</b> " . strtolower($str) . "<br><br>";
+
+                // c) First Character Uppercase
+
+                echo "<b>First Character Uppercase:</b> " . ucfirst($str) . "<br><br>";
+
+                // d) First Character of All Words Uppercase
+
+                echo "<b>All Words Uppercase:</b> " . ucwords($str) . "<br><br>";
+
+                // e) Remove Leading Zeroes
+
+                echo "<b>Remove Leading Zeroes:</b> " . ltrim($str,"0") . "<br><br>";
+
+                // f) Reverse
+
+                echo "<b>Reverse:</b> " . strrev($str) . "<br><br>";
+
+                // Length
+
+                echo "<b>Length:</b> " . strlen($str) . "<br><br>";
+
+                // Substring
+
+                echo "<b>Substring:</b> " . substr($str,0,5);
+            }
+
+        ?>
+
+    </div>
+
+</body>
+</html>
