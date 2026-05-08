@@ -1,0 +1,120 @@
+[18] Create a PHP program to search for a value (e.g., student roll number) in an array and
+display result.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Search Program</title>
+
+    <style>
+
+        body
+        {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container
+        {
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1
+        {
+            text-align: center;
+            color: darkblue;
+        }
+
+        input
+        {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .btn
+        {
+            background-color: darkblue;
+            color: white;
+            border: none;
+        }
+
+        h2
+        {
+            color: darkred;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><u>Search Value in Array</u></h1>
+
+        <!-- Form -->
+
+        <form method="POST">
+
+            <p>
+                <b>Enter Roll Number:</b><br>
+
+                <input type="number" name="roll"
+                placeholder="Enter roll number">
+            </p>
+
+            <!-- Buttons -->
+
+            <p>
+
+                <input type="submit" value="Search" class="btn">
+
+                <input type="reset" value="Reset" class="btn">
+
+            </p>
+
+        </form>
+
+        <!-- PHP Code -->
+
+        <?php
+
+            if($_SERVER["REQUEST_METHOD"] == "POST")
+            {
+                // Array of Roll Numbers
+
+                $roll_numbers = array(101, 102, 103, 104, 105);
+
+                // Get User Input
+
+                $search = $_POST['roll'];
+
+                // Search Value
+
+                if(in_array($search, $roll_numbers))
+                {
+                    echo "<h2>Roll Number Found</h2>";
+
+                    echo "Student Roll Number " . $search . " is present in array.";
+                }
+                else
+                {
+                    echo "<h2>Roll Number Not Found</h2>";
+
+                    echo "Student Roll Number " . $search . " is not present in array.";
+                }
+            }
+
+        ?>
+
+    </div>
+
+</body>
+</html>
